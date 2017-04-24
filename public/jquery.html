@@ -1,0 +1,69 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>jQuery App</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+
+</head>
+<body>
+  <div class="well clearfix">
+    <textarea class="form-control"></textarea><br/>
+    <button class="btn btn-primary pull-right">Tweet</button>
+  </div>
+  <script src="https://code.jquery.com/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script>
+  // Initially disable the button
+  $("button").prop("disabled", true);
+
+  // When the value of the text area changes...
+  $("textarea").on("input", function() {
+    // If there's at least one character...
+    if ($(this).val().length > 0) {
+      // Enable the button.
+      $("button").prop("disabled", false);
+    } else {
+      // Else, disable the button.
+      $("button").prop("disabled", true);
+    }
+  });
+  </script>
+</body>
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>jQuery App</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+
+</head>
+<body>
+  <div class="well clearfix">
+    <textarea class="form-control"></textarea><br/>
+    <button class="btn btn-primary pull-right">Tweet</button>
+  </div>
+  <script src="https://code.jquery.com/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script>
+  //hard code the button to be disabled
+
+    $('button').prop('disabled', true);
+
+    //attach a function to the text area
+    $('textarea').on('input', function() {
+      if ($(this).val().length > 0)   {
+         $('button').prop('disabled', false);
+      } else {
+      $('button').on('disabled', true)
+    }
+    })
+
+
+  </script>
+</body>
+</html>
