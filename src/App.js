@@ -44,6 +44,27 @@ class App extends Component {
   }
 }
 
+overflowAlert () {
+  if (this.remainingCharacters() < 0) {
+    if (this.state.photoAdded) {
+      var beforeOverflowText = this.state.text.substring(140 - 23 - 10, 140 - 23);
+      var overflowText = this.state.text.substring(140 - 23);
+    } else {
+      var beforeOverflowText = this.state.text.substring(140 - 10, 140);
+      var overflowText = this.state.text.substring(140);
+    }
+    return (
+      <div className="alert alert-warning">
+        <strong>Oops! Too Long:</strong>
+        &nbsp;...{beforeOverflowText}
+        <strong className="bg-danger">{overflowText}</strong>
+      </div>
+    );
+  } else {
+    return "";
+  }
+}
+
 
   disableCheck () {
     return this.state.text.length === 0 && this.state.photoAdded === false;
@@ -53,6 +74,7 @@ class App extends Component {
   render() {
     return (
       <div className="well clearfix">
+      { this.overflowAlert() }
         <textarea
           onChange={this.handleChange.bind(this)}
           className="form-control"></textarea>
