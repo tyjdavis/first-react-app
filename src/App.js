@@ -44,7 +44,7 @@ class App extends Component {
   }
 }
 
-overflowAlert () {
+overflowAlert () { //
   if (this.remainingCharacters() < 0) {
     if (this.state.photoAdded) {
       var beforeOverflowText = this.state.text.substring(140 - 23 - 10, 140 - 23);
